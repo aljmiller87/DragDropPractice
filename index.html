@@ -1,61 +1,84 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
 	<title>DrapAndDrop</title>
 	<link rel="stylesheet" type="text/css" href="main.css">
+	<link rel="stylesheet" type="text/css" href="grid.css">
 	<link href="toastr.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
-	<main>
-		<nav>
-			<ul>
-				<li>
-					<p><span class="strong">Course: </span>DC Theory</p>
+	<main class="row">
+		<section class="content col-12">
+			<nav class="topbar row">
+			    <img src="images/ML.png" class="top-picture col-4">
+			    <ul class="col-8">
+			        <li class="col-4"><a href="" class="underline">Home</a></li>
+			        <li class="col-4"><a href="" class="underline">Previous Lesson</a></li>
+			        <li class="col-4"><a href="" class="underline">Log Out</a></li>
+			    </ul>
+			</nav>
+			<nav class="row">
+				<ul class="row">
+					<li class="col-3">
+						<p><span class="strong">Course: </span>DC Theory</p>
 					</li>
-				<li>
-					<p><span class="strong">Unit Name: </span>Electrical Basics</p>
-				</li>
-				<li>
-					<p><span class="strong">Lesson Title: </span>Lesson 14 - Open, Closed and Shorted Circuit</p>
-				</li>
-				<li>
-					<p><span class="strong">ML screen </span>006</p>
-				</li>
-			</ul>
-		</nav>
-		<div class="question-container">
-			<div>Take a look at the four different circuit layouts. Drag and drop the image onto the correct category of Circuit Paths.</div>
-		</div>
-		<section class="questionsAndAnswers">
-			<section class="answers">
-				<ul>
-					<li id="answerOpenCircuit" ondrop="drop(event)" ondragover="allowDrop(event)">Open Circuit</li>
-					<li id="answerClosedCircuit" ondrop="drop(event)" ondragover="allowDrop(event)">Closed Circuit</li>
-					<li id="answerShortedCircuit" ondrop="drop(event)" ondragover="allowDrop(event)">Shorted Circuit</li>
+					<li class="col-3">
+						<p><span class="strong">Unit Name: </span>Electrical Basics</p>
+					</li>
+					<li class="col-3">
+						<p><span class="strong">Lesson Title: </span>Lesson 14 - Open, Closed and Shorted Circuit</p>
+					</li>
+					<li class="col-3">
+						<p><span class="strong">ML screen </span>006</p>
+					</li>
 				</ul>
-			</section>
-			<section class="images">
-				<div class="imagesWrapper">
-					<div class="row">
-						<div class="option">
-							<img id="a" src="./images/optionA.png" alt="some text" draggable="true" ondragstart="drag(event)">
-						</div>
-						<div class="option">
-							<img id="b" src="./images/optionB.png" alt="some text" draggable="true" ondragstart="drag(event)">
-						</div>
-					</div>
-					<div class="row">
-						<div class="option">
-							<img id="c" src="./images/optionC.png" height="250" width="300" alt="some text" draggable="true" ondragstart="drag(event)">
-						</div>
-						<div class="option">
-							<img id="d" src="./images/optionD.png" alt="some text" draggable="true" ondragstart="drag(event)">
-						</div>
-					</div>
+			</nav>
+			<div class="row">
+				<div class="blank col-3">.   
 				</div>
+				<div class="question-container col-6">Take a look at the four different circuit layouts. Drag and drop the image onto the correct category of Circuit Paths.</div>
+				<div class="next-lesson col-6 hidden">
+					<div>Great job!</div>
+					<button class="btn">Continue to Next Lesson</button>
+				</div>
+			</div>
+			<section class="questionsAndAnswers row">
+				<section class="answers col-3">
+					<ul>
+						<li id="answerOpenCircuit" ondrop="drop(event)" ondragover="allowDrop(event)">Open Circuit</li>
+						<li id="answerClosedCircuit" ondrop="drop(event)" ondragover="allowDrop(event)">Closed Circuit</li>
+						<li id="answerShortedCircuit" ondrop="drop(event)" ondragover="allowDrop(event)">Shorted Circuit</li>
+					</ul>
+				</section>
+				<section class="images col-9">
+						<div class="row">
+							<div class="option col-6">
+								<img id="a" src="./images/optionA.png" alt="some text" draggable="true" ondragstart="drag(event)">
+								<p id="checkA" class="check hidden">&#10004</p>
+							</div>
+							<div class="option col-6">
+								<img id="b" src="./images/optionB.png" alt="some text" draggable="true" ondragstart="drag(event)">
+								<p id="checkB" class="check hidden">&#10004</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="option col-6">
+								<img id="c" src="./images/optionC.png" height="250" width="300" alt="some text" draggable="true" ondragstart="drag(event)">
+								<p id="checkC" class="check hidden">&#10004</p>
+							</div>
+							<div class="option col-6">
+								<img id="d" src="./images/optionD.png" alt="some text" draggable="true" ondragstart="drag(event)">
+								<p id="checkD" class="check hidden">&#10004</p>
+							</div>
+						</div>
+				</section>
 			</section>
-		</section>
 
+
+
+		</section>
 	</main>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="toastr.js"></script>
